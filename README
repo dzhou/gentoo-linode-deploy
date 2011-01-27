@@ -1,9 +1,4 @@
-kefei dan zhou (kefei.zhou at gmail)
-
 Linode Gentoo 2010.0 64bit deployment script 
 The default gentoo image on linode is on 2008.0 profile 
-To be able to install any recent package you need to sync and update the 
-system which is quite troublesome
- 
-This script will automate the update process and sort out all the blockers
-Run with root from the same directory with the included configs 
+This script will automate the update process and sort out all the blockers so
+you end up with a 64bit gentoo with the latest packages 
