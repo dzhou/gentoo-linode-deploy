@@ -92,7 +92,7 @@ emerge sudo syslog-ng chkrootkit eix vixie-cron
 emerge iptraf netcat nmap tcpdump traceroute iptables dhcpcd ntp 
 
 # Dev tools 
-emerge ipython git subversion scipy screen vim unzip tree links 
+emerge ipython git subversion scipy screen vim unzip links app-text/tree
 
 # Servers/DB
 emerge mysql apache lighttpd
