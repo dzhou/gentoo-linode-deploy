@@ -79,11 +79,13 @@ emerge -C man-pages
 # you can apply the hack below or mask the package 
 # Touch hack 
 # Solving sandbox bug: IO Failure -- Failed 'touch .unpacked'
+# Solution 1
 #emerge -1 coreutils
 #mv /bin/touch /bin/oldtouch 
 #echo '#!/bin/sh' > /bin/touch 
 #echo 'echo -n >> "$1"' >> /bin/touch 
 #chmod +x /bin/touch 
+# Solution 2
 echo '>sys-apps/coreutils-6.10-r2' >> /etc/portage/package.mask
 
 # Full update 
@@ -98,7 +100,7 @@ echo "-5" | etc-update
 emerge sudo syslog-ng chkrootkit eix vixie-cron 
 
 # Networking 
-emerge iptraf netcat nmap tcpdump traceroute iptables dhcpcd ntp 
+emerge iptraf netcat nmap tcpdump traceroute iptables dhcpcd ntp whois
 
 # Dev tools 
 emerge ipython git subversion scipy screen vim unzip links app-text/tree
@@ -106,9 +108,15 @@ emerge ipython git subversion scipy screen vim unzip links app-text/tree
 # Servers/DB
 emerge mysql apache lighttpd
 
-
-# Create user 
-#useradd -m -G users,wheel guest
-#passwd guest
 # Create eix database
-#eix-update 
+eix-update 
+
+# Make sure eth0+sshd are on at boot
+rc-update add net.eth0 boot
+rc-update add sshd default
+
+# Completed
+echo 'gentoo updated'
+echo 'remember to create a new user:'
+echo '	useradd -m -G users,wheel user1'
+echo '	passwd user1'
