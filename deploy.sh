@@ -80,13 +80,15 @@ emerge -C man-pages
 # Touch hack 
 # Solving sandbox bug: IO Failure -- Failed 'touch .unpacked'
 # Solution 1
-#emerge -1 coreutils
-#mv /bin/touch /bin/oldtouch 
-#echo '#!/bin/sh' > /bin/touch 
-#echo 'echo -n >> "$1"' >> /bin/touch 
-#chmod +x /bin/touch 
+emerge -1 coreutils
+mv /bin/touch /bin/oldtouch 
+echo '#!/bin/sh' > /bin/touch 
+echo 'echo -n >> "$1"' >> /bin/touch 
+chmod +x /bin/touch 
+#
 # Solution 2
-echo '>sys-apps/coreutils-6.10-r2' >> /etc/portage/package.mask
+#echo '>sys-apps/coreutils-6.10-r2' >> /etc/portage/package.mask
+#
 
 # Full update 
 emerge -DuN world
