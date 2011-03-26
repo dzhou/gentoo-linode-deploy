@@ -1,0 +1,2 @@
+#>sys-apps/coreutils-6.10-r2
+>=sys-devel/gcc-4.4.5

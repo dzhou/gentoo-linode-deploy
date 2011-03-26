@@ -1,0 +1,6 @@
+dev-php5/mongo ~amd64
+dev-lang/php ~amd64
+dev-haskell/cabal-install   ~amd64
+dev-haskell/http    ~amd64
+dev-haskell/cabal   ~amd64
+dev-libs/libpcre    ~amd64
